@@ -19,5 +19,9 @@
     gap: 5px;
 }
 
-.icon {
+.divideLine {
+    height: 100%;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid grey;
 }

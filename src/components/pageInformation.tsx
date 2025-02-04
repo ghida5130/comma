@@ -6,6 +6,7 @@ import nextIcon from "@/public/icons/next.png";
 import githubIcon from "@/public/icons/github.svg";
 
 import { StaticImageData } from "next/image";
+import { Fragment } from "react";
 
 export default function PageInformation({
     data,
@@ -25,21 +26,16 @@ export default function PageInformation({
             </Link>
             <p className={styles.description}>{data.description}</p>
             <div className={styles.iconArea}>
-                {data.icons.map((src, idx) => {
-                    if (idx === 1) {
-                        return (
-                            <>
-                                <Divide />
-                                <Image src={src} alt={`${data.title} icons`} height={30} />
-                            </>
-                        );
-                    }
-                    return <Image src={src} alt={`${data.title} icons`} height={30} />;
-                })}
+                {data.icons.map((src, idx) => (
+                    <Fragment key={idx}>
+                        {idx === 1 && <Divide />}
+                        <Image src={src} alt={`${data.title} icons`} height={25} />
+                    </Fragment>
+                ))}
                 <Divide />
-                <Link href={data.githubLink}>
-                    <Image className={styles.icon} src={githubIcon} alt={`${data.title} github icon`} height={30} />
-                </Link>
+                <a href={data.githubLink}>
+                    <Image className={styles.icon} src={githubIcon} alt={`${data.title} github icon`} height={25} />
+                </a>
             </div>
         </div>
     );

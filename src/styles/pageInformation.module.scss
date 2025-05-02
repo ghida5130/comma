@@ -20,11 +20,12 @@
 .iconArea {
     display: flex;
     gap: 10px;
+    height: 30px;
 }
 
 .divideLine {
-    height: 100%;
-    /* padding-left: 10px; */
-    /* margin-left: 10px; */
-    border-left: 1px solid grey;
+    height: 90%;
+    margin: 0 5px;
+    width: 1px;
+    background: grey;
 }

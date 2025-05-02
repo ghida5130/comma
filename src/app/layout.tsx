@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { myFont } from "./fonts";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
     title: "Comma - 박성수 포트폴리오",
@@ -15,7 +15,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ko" className={myFont.variable}>
-            <body>{children}</body>
+            <body>
+                <Header />
+                <main>{children}</main>
+            </body>
         </html>
     );
 }

@@ -1,8 +1,6 @@
 import Link from "next/link";
-import styles from "../styles/pageInformation.module.css";
+import styles from "../styles/pageInformation.module.scss";
 import Image from "next/image";
-import reactIcon from "@/public/icons/react.svg";
-import nextIcon from "@/public/icons/next.png";
 import githubIcon from "@/public/icons/github.svg";
 
 import { StaticImageData } from "next/image";

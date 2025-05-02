@@ -1,15 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import PageInformation from "@/components/pageInformation";
-
-import { pageData } from "@/data/pageData";
+import styles from "@/styles/page.module.scss";
 
 export default function Home() {
     return (
-        <div className={styles.items}>
-            {pageData.map((val) => (
-                <PageInformation key={val.title} data={val} />
-            ))}
+        <div>
+            <p>이펙트 넣어서 이름, 간단소개 넣기</p>
         </div>
     );
 }

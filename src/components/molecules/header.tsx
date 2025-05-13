@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { throttle } from "lodash";
-import { StaticImageData } from "next/image";
 
 // icons
 import homeIcon from "@/public/icons/header/home.svg";
@@ -12,7 +9,8 @@ import aboutMeIcon from "@/public/icons/header/me.svg";
 import projectIcon from "@/public/icons/header/project.svg";
 
 // styles
-import styles from "@/styles/header.module.scss";
+import clsx from "clsx";
+import HeaderBtn from "../atoms/button/headerBtn";
 
 export default function Header() {
     const [isVisible, setIsVisible] = useState(true);
@@ -51,33 +49,25 @@ export default function Header() {
     }, []);
 
     const buttonList = [
-        { name: "Home", icon: homeIcon, href: "/" },
-        { name: "About Me", icon: aboutMeIcon, href: "/me" },
-        { name: "Projects", icon: projectIcon, href: "/projects" },
+        { name: "홈", icon: homeIcon, href: "/" },
+        { name: "소개", icon: aboutMeIcon, href: "/me" },
+        { name: "프로젝트", icon: projectIcon, href: "/projects" },
+        { name: "테스트", icon: projectIcon, href: "/test" },
+        { name: "테스트2", icon: projectIcon, href: "/test2" },
     ];
 
     return (
-        <header className={`${styles.header} ${isVisible ? styles.visible : styles.hidden}`}>
-            <div className={styles.headerArea}>
+        <header
+            className={clsx(
+                "fixed flex w-full h-24 justify-center items-center z-[9999] transition-transform duration-300 ease-in-out",
+                isVisible ? "translate-y-0" : "-translate-y-[120px]"
+            )}
+        >
+            <div className="flex px-6 justify-center items-center h-20 bg-black mt-2 rounded-full">
                 {buttonList.map((val) => (
-                    <Button key={val.name} name={val.name} icon={val.icon} href={val.href} />
+                    <HeaderBtn key={val.name} name={val.name} icon={val.icon} href={val.href} />
                 ))}
             </div>
         </header>
     );
 }
-
-interface ButtonProps {
-    name: string;
-    icon: StaticImageData;
-    href: string;
-}
-
-const Button = ({ name, icon, href }: ButtonProps) => {
-    return (
-        <Link href={href} className={styles.headerBtn}>
-            <Image src={icon} alt={`${name} icon`} width={25} />
-            <p>{name}</p>
-        </Link>
-    );
-};

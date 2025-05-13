@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { myFont } from "./fonts";
-import Header from "@/components/header";
+import Header from "@/components/molecules/header";
+import StoreProvider from "./storeProvider";
+import UniverseBackground from "@/components/atoms/layout/universeBackground";
 
 export const metadata: Metadata = {
     title: "Comma - 박성수 포트폴리오",
@@ -17,7 +19,10 @@ export default function RootLayout({
         <html lang="ko" className={myFont.variable}>
             <body>
                 <Header />
-                <main>{children}</main>
+                <StoreProvider>
+                    <UniverseBackground />
+                    <main>{children}</main>
+                </StoreProvider>
             </body>
         </html>
     );

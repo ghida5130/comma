@@ -1,0 +1,18 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import projectGithubIcon from "@/public/icons/modal/github.svg";
+
+interface ProjectGithubBtnProps {
+    href: string | null;
+    title: string;
+}
+
+export default function ProjectGithubBtn({ href, title }: ProjectGithubBtnProps) {
+    if (href === null) return null;
+    return (
+        <Link href={href} className="flex gap-2 text-[#71afff]">
+            <Image src={projectGithubIcon} alt={title + "github button"} width={15} /> {href}
+        </Link>
+    );
+}

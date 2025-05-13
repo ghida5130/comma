@@ -1,113 +1,23 @@
-.wrap {
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    position: relative;
-
-    @media (max-width: 768px) {
-        width: 80%;
-    }
-
-    @media (max-width: 480px) {
-        width: 90%;
-    }
-}
-
-.infoArea {
-    padding: 100px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-
-    > p {
-        padding: 0 80px;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 600;
-        color: rgb(170, 170, 170);
-    }
-
-    @media (max-width: 768px) {
-        > p {
-            padding: 0 40px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        > p {
-            padding: 0px;
-        }
-    }
-
-    .introduce {
-        padding: 10px;
-        text-align: center;
-        font-size: 60px;
-        font-weight: 700;
-        p {
-            display: inline-block;
-            margin: 0 4px;
-            white-space: nowrap;
-            background: linear-gradient(to bottom, #ffffff, #b4b4b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            &:nth-of-type(1) {
-                font-size: 50px;
-            }
-        }
-
-        @media (max-width: 768px) {
+.introduce {
+    p {
+        display: inline-block;
+        margin: 0 4px;
+        white-space: nowrap;
+        background: linear-gradient(to bottom, #ffffff, #b4b4b4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        &:nth-of-type(1) {
             font-size: 50px;
         }
-
-        @media (max-width: 480px) {
-            font-size: 40px;
-        }
     }
 }
 
-.tistoryBtn {
-    margin: 0 auto;
-    width: 150px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    padding: 0px 15px;
-    background-color: rgb(66, 66, 66);
-    border-radius: 10px;
-    color: white;
-    border: none;
-    position: relative;
-    cursor: pointer;
-    transition-duration: 0.2s;
-    font-size: 15px;
-    font-weight: 600;
-}
+// 링크 버튼
 
-.arrow {
-    position: absolute;
-    right: 0;
-    width: 30px;
-    height: 100%;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tistoryBtn:hover {
-    background-color: rgb(77, 77, 77);
-    transition-duration: 0.2s;
-}
-
-.tistoryBtn:hover .arrow {
+.linkBtn:hover .arrow {
     animation: slide-right 0.6s ease-out both;
 }
-/* arrow animation */
+
 @keyframes slide-right {
     0% {
         transform: translateX(-10px);
@@ -120,7 +30,7 @@
     }
 }
 
-.tistoryBtn:active {
+.linkBtn:active {
     transform: translate(1px, 1px);
     transition-duration: 0.2s;
 }

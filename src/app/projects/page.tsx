@@ -4,7 +4,7 @@ import Project from "@/components/organisms/projects/project";
 import ProjectModal from "@/components/templates/projectModal";
 import { myProjectData } from "@/data/projectData";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 // redux
 import { useAppSelector } from "@/lib/hooks";

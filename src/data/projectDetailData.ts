@@ -4,7 +4,7 @@ import { milliUlsanDetail } from "./projectDetailData/milliUlsanDetail";
 import { millivieDetail } from "./projectDetailData/millivieDetail";
 import { travelDamoaDetail } from "./projectDetailData/travelDamoaDetail";
 
-import { DetailDataType } from "./projectDetailData/commaDetail";
+import { DetailDataType } from "@/types/type";
 
 export interface ProjectDetailDataType {
     [key: string]: DetailDataType;

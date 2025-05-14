@@ -5,14 +5,13 @@ import ProjectGithubBtn from "@/components/atoms/button/projectGithubBtn";
 import ProjectLinkBtn from "@/components/atoms/button/projectLinkBtn";
 import SkillIcon from "@/components/atoms/icons/skillIcon";
 import { ProjectDataType } from "@/data/projectData";
-import { useAppDispatch } from "@/lib/hooks";
 
 interface ProjectType {
     objKey: string;
     data: ProjectDataType;
 }
 
-export default function Project({ objKey, data }: ProjectType) {
+export default function ProjectCard({ objKey, data }: ProjectType) {
     return (
         <div className="p-5 rounded-lg flex flex-col gap-2 relative bg-secondary shadow-lg shadow-black">
             <p className="text-3xl font-semibold">

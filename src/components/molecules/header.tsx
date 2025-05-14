@@ -7,10 +7,13 @@ import { throttle } from "lodash";
 import homeIcon from "@/public/icons/header/home.svg";
 import aboutMeIcon from "@/public/icons/header/me.svg";
 import projectIcon from "@/public/icons/header/project.svg";
+import skillIcon from "@/public/icons/header/skill.svg";
+import activityIcon from "@/public/icons/header/activity.svg";
 
 // styles
 import clsx from "clsx";
 import HeaderBtn from "../atoms/button/headerBtn";
+import { useScroll } from "framer-motion";
 
 export default function Header() {
     const [isVisible, setIsVisible] = useState(true);
@@ -49,11 +52,10 @@ export default function Header() {
     }, []);
 
     const buttonList = [
-        { name: "홈", icon: homeIcon, href: "/" },
-        { name: "소개", icon: aboutMeIcon, href: "/me" },
-        { name: "프로젝트", icon: projectIcon, href: "/projects" },
-        { name: "테스트", icon: projectIcon, href: "/test" },
-        { name: "테스트2", icon: projectIcon, href: "/test2" },
+        { name: "Introduce", icon: aboutMeIcon, href: "/me" },
+        { name: "Skills", icon: skillIcon, href: "/me" },
+        { name: "Activity", icon: activityIcon, href: "/me" },
+        { name: "Projects", icon: projectIcon, href: "/projects" },
     ];
 
     return (
@@ -64,8 +66,8 @@ export default function Header() {
             )}
         >
             <div className="flex px-6 justify-center items-center h-20 bg-black mt-2 rounded-full">
-                {buttonList.map((val) => (
-                    <HeaderBtn key={val.name} name={val.name} icon={val.icon} href={val.href} />
+                {buttonList.map((val, idx) => (
+                    <HeaderBtn key={val.name} name={val.name} icon={val.icon} href={val.href} idx={idx} />
                 ))}
             </div>
         </header>

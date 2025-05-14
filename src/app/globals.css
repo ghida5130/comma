@@ -4,7 +4,7 @@
     /* --color-primary: #1d1d1d; */
     --color-primary: #080b14;
     /* --color-secondary: #3a3a3a; */
-    --color-secondary: rgba(16, 24, 46, 0.9);
+    --color-secondary: rgba(16, 24, 46, 0.8);
 }
 
 @layer utilities {

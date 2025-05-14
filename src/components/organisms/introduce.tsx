@@ -22,7 +22,7 @@ export default function Introduce() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
                 <LinkBtn url="https://cstelladev.tistory.com/" title="Tistory" logo={tistoryIcon} />
-                <LinkBtn url="/projects" title="Projects" logo={projectIcon} />
+                {/* <LinkBtn url="/projects" title="Projects" logo={projectIcon} /> */}
             </div>
         </section>
     );

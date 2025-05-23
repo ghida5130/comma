@@ -13,7 +13,7 @@ export default function DetailBtn({ innerText, name }: DetailBtnType) {
     return (
         <button
             onClick={() => showModal(name)}
-            className="p-2 w-30 mx-auto bg-neutral-500 hover:bg-neutral-400 rounded-md font-medium duration-200 mt-2"
+            className="p-2 w-30 mx-auto bg-[#566eaf] hover:bg-[#8392bd] rounded-md font-medium duration-200 mt-2"
         >
             {innerText}
         </button>

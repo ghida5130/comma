@@ -1,9 +1,4 @@
-type Data = {
-    title: string;
-    skills: string[];
-};
-
-type MySkillDataType = Data[];
+import { MySkillDataType } from "@/types/type";
 
 const mySkillData: MySkillDataType = [
     {
@@ -12,7 +7,7 @@ const mySkillData: MySkillDataType = [
     },
     {
         title: "Front-End",
-        skills: ["react", "next", "recoil", "tanstack", "three", "redux"],
+        skills: ["react", "next", "redux", "recoil", "tanstack", "three"],
     },
     {
         title: "Styles",

@@ -23,13 +23,7 @@ import htmlIcon from "@/public/icons/skills/html.svg";
 import cssIcon from "@/public/icons/skills/css.svg";
 import reduxIcon from "@/public/icons/skills/redux.svg";
 
-export interface SkillItemType {
-    title: string;
-    icon: StaticImageData;
-    color: string;
-}
-
-export type SkillIconDataType = Record<string, SkillItemType>;
+import { SkillIconDataType } from "@/types/type";
 
 const skillIconData: SkillIconDataType = {
     js: { title: "JavaScript", icon: jsIcon, color: "#ffd600" },

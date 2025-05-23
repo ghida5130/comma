@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useRef, ReactNode, RefObject } from "react";
+import { createContext, useContext, useRef, ReactNode, RefObject, useCallback, useMemo } from "react";
 
 type ScrollContextType = {
     sectionRefs: RefObject<HTMLElement[]>;
@@ -12,9 +12,11 @@ const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 export const ScrollProvider = ({ children }: { children: ReactNode }) => {
     const sectionRefs = useRef<HTMLElement[]>([]);
 
-    const scrollTo = (index: number) => {
+    const scrollTo = useCallback((index: number) => {
         sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
-    };
+    }, []);
+
+    const value = useMemo(() => ({ sectionRefs, scrollTo }), [scrollTo]);
 
     return <ScrollContext.Provider value={{ sectionRefs, scrollTo }}>{children}</ScrollContext.Provider>;
 };

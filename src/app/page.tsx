@@ -8,6 +8,7 @@ import SectionTitle from "@/components/atoms/layout/sectionTitle";
 import FadeInSection from "@/components/atoms/animation/fadeInSection";
 import { useCategoryScroll } from "./scrollContext";
 import Projects from "@/components/organisms/projects";
+import { useCallback } from "react";
 
 export default function Home() {
     return (
@@ -41,13 +42,11 @@ export default function Home() {
 
 const ScrollNum = ({ num, children }: { num: number; children: React.ReactNode }) => {
     const { sectionRefs } = useCategoryScroll();
-    return (
-        <div
-            ref={(el) => {
-                sectionRefs.current[num] = el!;
-            }}
-        >
-            {children}
-        </div>
+    const setRef = useCallback(
+        (el: HTMLElement | null) => {
+            if (el) sectionRefs.current[num] = el;
+        },
+        [num]
     );
+    return <div ref={setRef}>{children}</div>;
 };

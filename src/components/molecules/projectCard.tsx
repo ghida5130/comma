@@ -4,7 +4,7 @@ import DetailBtn from "@/components/atoms/button/detailBtn";
 import ProjectGithubBtn from "@/components/atoms/button/projectGithubBtn";
 import ProjectLinkBtn from "@/components/atoms/button/projectLinkBtn";
 import SkillIcon from "@/components/atoms/icons/skillIcon";
-import { ProjectDataType } from "@/data/projectData";
+import { ProjectDataType } from "@/types/type";
 
 interface ProjectType {
     objKey: string;

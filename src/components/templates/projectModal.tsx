@@ -37,13 +37,13 @@ export default function ProjectModal() {
             >
                 {currentProject ? (
                     <>
-                        <div className="px-5 py-3 absolute top-0 bg-black w-full">
+                        <div className="px-5 py-3 absolute top-0 bg-[black] w-full">
                             <h1 className="text-2xl font-semibold">
                                 {currentProject.title} {currentProject.develop}
                             </h1>
                             <p className="">{currentProject.description}</p>
                         </div>
-                        <div className="bg-[#d8d8d8] h-full pt-20">
+                        <div className="bg-[#cccccc] h-full pt-20">
                             <div className="h-full w-[95%] mx-auto overflow-auto scrollbar-hide p-5 text-black flex flex-col gap-10">
                                 <section>
                                     <ModalCategoryT>개발 동기</ModalCategoryT>
@@ -60,14 +60,6 @@ export default function ProjectModal() {
                                         <ModalContentT key={idx}>{val}</ModalContentT>
                                     ))}
                                 </section>
-                                {/* <section>
-                                    <ModalCategoryT>사용한 기술</ModalCategoryT>
-                                    <div className="flex flex-wrap gap-3">
-                                        {currentProject.skills.map((val) => (
-                                            <SkillIcon key={val} type={val} />
-                                        ))}
-                                    </div>
-                                </section> */}
                                 <section>
                                     <ModalCategoryT>상세</ModalCategoryT>
                                     {currentProject.learned.map(({ title, content }) => (
@@ -94,7 +86,6 @@ export default function ProjectModal() {
                                                     alt={title + " image"}
                                                     width={350}
                                                     height={0}
-                                                    priority={true}
                                                     className="object-cover h-[150px]"
                                                 />
                                             </button>

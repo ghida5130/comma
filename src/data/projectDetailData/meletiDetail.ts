@@ -2,7 +2,7 @@ import { DetailDataType } from "@/types/type";
 
 export const meletiDetail: DetailDataType = {
     title: "Meλeti",
-    develop: "(1인 개발, 제작중중)",
+    develop: "(1인 개발, 제작중)",
     description: "모바일 독서 기록 사이트",
     skills: ["next", "ts", "scss", "firebase", "tanstack", "three"],
     motivation:
@@ -22,7 +22,7 @@ export const meletiDetail: DetailDataType = {
         {
             title: "Three.js를 통한 도서 3D 구현",
             content:
-                "책을 구매하기전 입체로 책을 돌려보며 두께나 크기를 짐작할할 수 있으면 좋겠다는 생각에서 Three.js를 활용했습니다. 모양과 질감을 정의하고 이미지를 덮어 씌우거나 조명을 통한 그림자를 만드는 Three.js의 기본 사용법을 익힐 수 있었습니다.",
+                "책을 구매하기전 입체로 책을 돌려보며 두께나 크기를 짐작할 수 있으면 좋겠다는 생각에서 Three.js를 활용했습니다. 모양과 질감을 정의하고 이미지를 덮어 씌우거나 조명을 통한 그림자를 만드는 Three.js의 기본 사용법을 익힐 수 있었습니다.",
         },
         {
             title: "Tanstack Query와 Firebase firestore",

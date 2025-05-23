@@ -5,6 +5,8 @@ import Header from "@/components/molecules/header";
 import StoreProvider from "./storeProvider";
 import UniverseBackground from "@/components/atoms/layout/universeBackground";
 import { ScrollProvider } from "./scrollContext";
+import Footer from "@/components/atoms/layout/footer";
+import ScrollToTopBtn from "@/components/atoms/button/scrollToTopBtn";
 
 export const metadata: Metadata = {
     title: "Comma - 박성수 포트폴리오",
@@ -25,6 +27,8 @@ export default function RootLayout({
                         <UniverseBackground />
                         <main>{children}</main>
                     </StoreProvider>
+                    <Footer />
+                    <ScrollToTopBtn />
                 </ScrollProvider>
             </body>
         </html>

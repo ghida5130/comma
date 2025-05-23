@@ -1,12 +1,4 @@
-export interface ProjectDataType {
-    title: string;
-    develop: string;
-    description: string;
-    link: string | null;
-    github: string | null;
-    skills: string[];
-    introduce: string[];
-}
+import { ProjectDataType } from "@/types/type";
 
 type MyProjectDataType = Record<string, ProjectDataType>;
 

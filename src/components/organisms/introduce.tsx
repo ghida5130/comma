@@ -17,8 +17,7 @@ export default function Introduce() {
                 className="px-[80px] text-[20px] font-semibold text-[#aaaaaa]
                 max-md:px-[40px] max-sm:px-0"
             >
-                더 나은 사용자 경험을 고려하고 최신 기술을 빠르게 습득하여 지속적으로 성장하는 개발자가 되도록 노력하고
-                있습니다.
+                더 나은 사용자 경험을 고민하며, 최신 기술을 빠르게 습득해 지속적으로 성장하고자 노력합니다.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
                 <LinkBtn url="https://cstelladev.tistory.com/" title="Tistory" logo={tistoryIcon} />

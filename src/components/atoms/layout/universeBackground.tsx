@@ -33,7 +33,7 @@ export default function UniverseBackground() {
             for (let i = 0; i < count; i++) {
                 out.push({
                     x: Math.random() * 3000 - 1000, // 넓은 범위에 생성 (움직일 수 있게)
-                    y: Math.random() * 1000,
+                    y: Math.random() * h, // 화면 높이에 맞춰 생성
                     size: Math.random() * 0.5 + 0.5,
                     flicker: Math.random() * Math.PI * 2,
                 });

@@ -15,7 +15,8 @@ export const commaDetail: DetailDataType = {
     learned: [
         {
             title: "TailwindCSS : Utility-First CSS",
-            content: "개발 중",
+            content:
+                "Tailwind는 처음엔 적응에 시간이 많이 필요할 거라 생각했지만, CSS에 익숙한 사람이라면 금방 익숙해질 수 있고, 익숙해진 뒤에는 개발 효율이 크게 올라간다는 걸 알 수 있었습니다. 특히 클래스명으로 빠르게 스타일을 적용하고 확인할 수 있으며, 간단한 반응형 디자인과 자유로운 커스터마이징도 큰 강점으로 느껴졌습니다.",
         },
         {
             title: "Redux : 모달 창 상태 관리",

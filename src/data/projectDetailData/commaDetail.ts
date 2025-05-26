@@ -19,7 +19,8 @@ export const commaDetail: DetailDataType = {
         },
         {
             title: "Redux : 모달 창 상태 관리",
-            content: "개발 중",
+            content:
+                "Redux로 모달창 열림 상태와 내용물을 관리했습니다. 초반 설정은 다른 상태 관리 라이브러리보다 복잡했지만 구현을 완료하고 커스텀 훅으로 가져다 쓰다 보니 전역 상태의 중앙집중 관리가 편리한것을 알 수 있었습니다.",
         },
     ],
     images: [

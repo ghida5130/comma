@@ -1,7 +1,7 @@
 import styles from "@/styles/me.module.scss";
 import LinkBtn from "@/components/atoms/button/linkBtn";
 import tistoryIcon from "@/public/icons/me/tistory.svg";
-import projectIcon from "@/public/icons/me/project.svg";
+import githubIcon from "@/public/icons/github.svg";
 
 export default function Introduce() {
     return (
@@ -21,7 +21,7 @@ export default function Introduce() {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
                 <LinkBtn url="https://cstelladev.tistory.com/" title="Tistory" logo={tistoryIcon} />
-                {/* <LinkBtn url="/projects" title="Projects" logo={projectIcon} /> */}
+                <LinkBtn url="https://github.com/ghida5130" title="Github" logo={githubIcon} />
             </div>
         </section>
     );

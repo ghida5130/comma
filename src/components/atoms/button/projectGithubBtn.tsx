@@ -11,7 +11,7 @@ interface ProjectGithubBtnProps {
 export default function ProjectGithubBtn({ href, title }: ProjectGithubBtnProps) {
     if (href === null) return null;
     return (
-        <Link href={href} className="flex gap-2 text-[#71afff]">
+        <Link target="_blank" rel="noopener noreferrer" href={href} className="flex gap-2 text-[#71afff]">
             <Image src={projectGithubIcon} alt={title + "github button"} width={15} /> {href}
         </Link>
     );

@@ -30,6 +30,7 @@ export interface ProjectDataType {
     github: string | null;
     skills: string[];
     introduce: string[];
+    serverGithub?: string;
 }
 
 export interface SkillIconDataType {

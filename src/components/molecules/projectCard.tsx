@@ -33,6 +33,7 @@ export default function ProjectCard({ objKey, data }: ProjectType) {
             <div className="mt-3"></div>
             <ProjectLinkBtn href={data.link} title={data.title} />
             <ProjectGithubBtn href={data.github} title={data.title} />
+            {data.serverGithub ? <ProjectGithubBtn href={data.serverGithub} title={data.title} /> : null}
             <DetailBtn innerText="자세히 보기" name={objKey} />
         </div>
     );

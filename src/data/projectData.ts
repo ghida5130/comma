@@ -38,6 +38,7 @@ const myProjectData: MyProjectDataType = {
         description: "울산광역시 정보 조회 홈페이지",
         link: "https://milli-ulsan.vercel.app/",
         github: "https://github.com/ghida5130/milliUlsan",
+        serverGithub: "https://github.com/ghida5130/milliUlsanServer",
         skills: ["react", "ts", "styledComponents", "express", "recoil", "aws", "tanstack"],
         introduce: [
             "CSS Grid를 통한 반응형 디자인 및 컴포넌트 조립/재배치 최적화",

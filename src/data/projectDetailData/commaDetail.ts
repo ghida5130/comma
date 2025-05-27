@@ -26,19 +26,24 @@ export const commaDetail: DetailDataType = {
     ],
     images: [
         {
-            title: "comma 소개 페이지",
+            title: "comma 메인 페이지",
             content:
                 "https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_1.webp",
         },
         {
-            title: "comma 프로젝트 페이지",
+            title: "comma 메인 페이지 - 프로젝트",
             content:
                 "https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_2.webp",
         },
         {
-            title: "comma 프로젝트 페이지 (모바일)",
+            title: "comma 프로젝트 모달",
             content:
                 "https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_3.webp",
+        },
+        {
+            title: "comma 메인 페이지 (모바일)",
+            content:
+                "https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_4.webp",
         },
     ],
 };

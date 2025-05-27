@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# comma - 박성수 개인 포트폴리오
 
-## Getting Started
+<div>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+  <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+</div>
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 배포 링크
+- https://comma-bice.vercel.app/
+<br><br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 화면 구성
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 메인 페이지
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<img alt="comma main page screenshot" src="https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_1.webp" width="600" />
+<br><br><br>
 
-## Learn More
+- 메인페이지 - 프로젝트
 
-To learn more about Next.js, take a look at the following resources:
+<img alt="comma main page projects section screenshot" src="https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_2.webp" width="600" />
+<br><br><br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 프로젝트 모달
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<img alt="comma project modal screenshot" src="https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_3.webp" width="600" />
+<br><br><br>
 
-## Deploy on Vercel
+- 모바일 환경
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img alt="comma mobile screenshot" src="https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/comma/comma_4.webp" width="300" />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

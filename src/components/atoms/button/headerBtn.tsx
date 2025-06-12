@@ -12,7 +12,7 @@ interface ButtonProps {
 export default function HeaderBtn({ name, icon, href, idx }: ButtonProps) {
     const { scrollTo } = useCategoryScroll();
     return (
-        <button className="flex flex-col gap-1.5 w-16 items-center header-btn-hover" onClick={() => scrollTo(idx)}>
+        <button className="flex flex-col gap-1.5 w-16 items-center header-btn-hover" onClick={() => scrollTo(idx + 1)}>
             <Image src={icon} alt={`${name} icon`} width={25} />
             <p>{name}</p>
         </button>

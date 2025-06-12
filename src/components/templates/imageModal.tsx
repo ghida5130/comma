@@ -14,6 +14,7 @@ export default function ImageModal() {
             }}
         >
             <CloseImageModalBtn />
+            <p className="text-lg text-gray-300 mb-3">이미지를 클릭하면 닫힙니다.</p>
             <div className="w-full h-full xl:w-[80%] xl:h-[80%] relative">
                 <Image src={imageModalUrl} alt={imageModalName} fill className="object-contain" />
             </div>

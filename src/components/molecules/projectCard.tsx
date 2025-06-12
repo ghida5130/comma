@@ -14,10 +14,10 @@ interface ProjectType {
 export default function ProjectCard({ objKey, data }: ProjectType) {
     return (
         <div className="p-5 rounded-lg flex flex-col gap-2 relative bg-secondary shadow-lg shadow-black">
-            <p className="text-3xl font-semibold">
+            <h3 className="text-3xl font-semibold">
                 {data.title}
                 <span className="text-base font-light"> {data.develop}</span>
-            </p>
+            </h3>
 
             <p className="text-lg">{data.description}</p>
             <div className="flex flex-wrap gap-3">
@@ -30,10 +30,13 @@ export default function ProjectCard({ objKey, data }: ProjectType) {
                     <li key={val}>• {val}</li>
                 ))}
             </ul>
-            <div className="mt-3"></div>
-            <ProjectLinkBtn href={data.link} title={data.title} />
-            <ProjectGithubBtn href={data.github} title={data.title} />
-            {data.serverGithub ? <ProjectGithubBtn href={data.serverGithub} title={data.title} /> : null}
+            <div className="mt-3 flex flex-col gap-1">
+                <ProjectLinkBtn href={data.link} title={data.title} />
+                <ProjectGithubBtn href={data.github} title={data.title} />
+                {data.serverGithub ? (
+                    <ProjectGithubBtn href={data.serverGithub} title={data.title} alias="(Server)" />
+                ) : null}
+            </div>
             <DetailBtn innerText="자세히 보기" name={objKey} />
         </div>
     );

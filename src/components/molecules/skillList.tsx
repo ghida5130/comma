@@ -10,8 +10,8 @@ interface SkillAreaType {
 export default function SkillArea({ title, skills }: SkillAreaType) {
     return (
         <div>
-            <p className="text-lg font-extrabold mb-1">{title}</p>
-            <div className="flex flex-wrap gap-3 mb-10">
+            <h3 className="text-lg font-extrabold mb-1">{title}</h3>
+            <div className="flex flex-wrap gap-3">
                 {skills.map((data) => (
                     <SkillIcon key={data} type={data} />
                 ))}

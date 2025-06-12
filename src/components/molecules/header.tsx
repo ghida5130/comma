@@ -52,10 +52,10 @@ export default function Header() {
     }, []);
 
     const buttonList = [
-        { name: "Introduce", icon: aboutMeIcon, href: "/me" },
-        { name: "Skills", icon: skillIcon, href: "/me" },
-        { name: "Activity", icon: activityIcon, href: "/me" },
-        { name: "Projects", icon: projectIcon, href: "/projects" },
+        { name: "소개", icon: aboutMeIcon, href: "/me" },
+        { name: "기술", icon: skillIcon, href: "/me" },
+        { name: "주요 활동", icon: activityIcon, href: "/me" },
+        { name: "프로젝트", icon: projectIcon, href: "/projects" },
     ];
 
     return (

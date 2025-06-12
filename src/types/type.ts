@@ -9,7 +9,11 @@ export interface DetailDataType {
     overview: string[];
     learned: {
         title: string;
-        content: string;
+        content: string[];
+        link?: {
+            title: string;
+            url: string;
+        }[];
     }[];
     images: {
         title: string;
@@ -46,3 +50,9 @@ export type PrizeDataType = {
     detail: string;
     award: string;
 }[];
+
+export type IntroduceDataType = {
+    title: string;
+    detail: string;
+    content: string[];
+};

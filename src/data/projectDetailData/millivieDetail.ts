@@ -10,24 +10,42 @@ export const millivieDetail: DetailDataType = {
     overview: [
         "영화 정보 조회 및 검색 기능",
         "최근 조회한 영화, 즐겨찾기 추가 기능 제공",
-        "React, Next.js와 JavaScript의 학습 및 적용",
-        "auth.js의 oAuth와 credential provider를 활용한 회원 관리",
+        "사용자 평점 데이터 관리, 평균 평점 기능 제공",
+        "깃허브, 카카오 로그인 및 자체 회원가입 기능 제공",
     ],
     learned: [
         {
-            title: "React, Next.js와 JavaScript ",
-            content:
-                "이전에는 HTML, CSS, JavaScript만을 활용한 개발경험밖에 없고 자바스크립트의 학습도 부족했었습니다. 1인 개발로 간단한 DB를 관리하고 서버 기능을 활용하기 위해서는 사용자가 많은 풀스택 프레임워크인 Next.js가 유리하다고 생각했습니다. 이에 기반이 되는 React를 함께 학습하며 홈페이지를 제작했습니다.",
+            title: "웹 개발 기초 학습",
+            content: [
+                "Next.js의 파일 시스템 컨벤션, Route Handler, 기본제공 고성능 컴포넌트 등 학습",
+                "Web Storage API의 **Session Storage**를 통해 **최근 조회한 영화 기능** 구현",
+                "oAuth, Credential Provider를 활용한 로그인 기능과 사용자 데이터 관리",
+                "TMDB API를 활용을 통해 외부 API 활용 학습",
+            ],
         },
         {
-            title: "MongoDB 회원 정보 및 즐겨찾기 관리",
-            content:
-                "auth.js와 엮어 oAuth로 로그인한 유저 데이터를 관리하고 Credential Provider로 간단한 회원가입 기능을 구현했습니다. NoSQL 데이터베이스인 MongoDB의 JSON과 유사한 구조로 빠르게 사용법을 익히고 DB기능을 만들 수 있었습니다.",
+            title: "Core Web Vitals, 웹 접근성 개선 경험",
+            content: [
+                "이미지 최적화와 로컬 폰트 활용을 통해 **FCP, LCP 개선**",
+                "Layout Shift 요소를 정리하여 **CLS 개선**",
+                "문서 구조, aria-label 속성, alt 속성 조정으로 **Accessibility와 SEO 개선**",
+                "Lighthouse 평균 점수 **21점 향상**",
+            ],
+            link: [{ title: "코어 웹 바이탈과 웹 접근성 개선하기", url: "https://cstelladev.tistory.com/75" }],
         },
         {
-            title: "Session Storage를 통한 최근 조회한 영화 기능",
-            content:
-                "클라이언트측에 저장되는 저장소에 대해 학습하고 세션간 유지되는 Session Storage를 이용해 최근 조회한 영화기능을 구현했습니다.",
+            title: "MongoDB를 활용한 평점 데이터 관리 및 평균 계산",
+            content: [
+                "로그인한 사용자의 리뷰 데이터를 영화별로 저장",
+                "리뷰가 저장될 때 **평점을 재계산하여 반영**하도록 구현",
+                "**리뷰 작성 로직 완료 후 평점 재계산**을 수행하여 **작성 완료 대기시간 최소화**",
+            ],
+            link: [
+                {
+                    title: "리뷰 데이터가 추가될때 평점 평균 계산하기",
+                    url: "https://cstelladev.tistory.com/41",
+                },
+            ],
         },
     ],
     images: [

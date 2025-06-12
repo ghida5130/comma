@@ -33,7 +33,7 @@ const skillIconData: SkillIconDataType = {
     react: { title: "React", icon: reactIcon, color: "#61dafb" },
     next: { title: "Next.js", icon: nextIcon, color: "#969696" },
     recoil: { title: "Recoil", icon: recoilIcon, color: "#007af4" },
-    tanstack: { title: "Tanstack-Query", icon: reactQueryIcon, color: "#FF4154" },
+    tanstack: { title: "React-Query", icon: reactQueryIcon, color: "#FF4154" },
     three: { title: "Three.js", icon: threeJsIcon, color: "#585858" },
     scss: { title: "SCSS", icon: scssIcon, color: "#cd6799" },
     tailwind: { title: "TailwindCSS", icon: tailwindIcon, color: "#44a8b3" },

@@ -27,7 +27,7 @@ export default function UniverseBackground() {
         setCanvasSize();
         window.addEventListener("resize", setCanvasSize);
 
-        // 별 생성 (배경 느낌이니까 밀도 낮춤)
+        // 별 생성 (밀도)
         const makeStars = (count: number) => {
             const out = [];
             for (let i = 0; i < count; i++) {
@@ -41,7 +41,7 @@ export default function UniverseBackground() {
             return out;
         };
 
-        starsRef.current = makeStars(600);
+        starsRef.current = makeStars(200);
 
         const draw = () => {
             ctx.fillStyle = "#080b14";
@@ -59,7 +59,7 @@ export default function UniverseBackground() {
                 const y = s.y;
 
                 // 반짝임 (sine 기반)
-                s.flicker += 0.03;
+                s.flicker += 0.02;
                 const baseAlpha = 0.4 + Math.sin(s.flicker) * 0.3;
                 const alpha = baseAlpha * fade;
 

@@ -17,6 +17,7 @@ import ModalCategoryT from "../atoms/text/modalCategoryT";
 import ModalContentT from "../atoms/text/modalContentT";
 import ModalDetailDataTitleT from "../atoms/text/modalDetailDataTitleT";
 import SkillIcon from "../atoms/icons/skillIcon";
+import ModalLinkBtn from "../atoms/button/modalLinkBtn";
 
 export default function ProjectModal() {
     const { modalName } = useModal();
@@ -38,34 +39,39 @@ export default function ProjectModal() {
                 {currentProject ? (
                     <>
                         <div className="px-5 py-3 absolute top-0 bg-[black] w-full">
-                            <h1 className="text-2xl font-semibold">
+                            <h3 className="text-2xl font-semibold">
                                 {currentProject.title} {currentProject.develop}
-                            </h1>
+                            </h3>
                             <p className="">{currentProject.description}</p>
                         </div>
                         <div className="bg-[#cccccc] h-full pt-20">
                             <div className="h-full w-[95%] mx-auto overflow-auto scrollbar-hide p-5 text-black flex flex-col gap-10">
                                 <section>
                                     <ModalCategoryT>개발 동기</ModalCategoryT>
-                                    <ModalContentT>{currentProject.motivation}</ModalContentT>
+                                    <ModalContentT data={currentProject.motivation} />
                                 </section>
                                 <section>
-                                    <ModalCategoryT>요약</ModalCategoryT>
+                                    <ModalCategoryT>기능 요약</ModalCategoryT>
                                     <div className="flex flex-wrap gap-3 mb-2">
                                         {currentProject.skills.map((val) => (
                                             <SkillIcon key={val} type={val} />
                                         ))}
                                     </div>
                                     {currentProject.overview.map((val, idx) => (
-                                        <ModalContentT key={idx}>{val}</ModalContentT>
+                                        <ModalContentT key={idx} data={val} />
                                     ))}
                                 </section>
                                 <section>
-                                    <ModalCategoryT>상세</ModalCategoryT>
-                                    {currentProject.learned.map(({ title, content }) => (
+                                    <ModalCategoryT>기술 상세</ModalCategoryT>
+                                    {currentProject.learned.map(({ title, content, link }, i) => (
                                         <div key={title}>
                                             <ModalDetailDataTitleT>{title}</ModalDetailDataTitleT>
-                                            <ModalContentT>{content}</ModalContentT>
+                                            {content.map((data, j) => (
+                                                <ModalContentT key={"project detail content" + i + j} data={data} />
+                                            ))}
+                                            {link
+                                                ? link.map((data) => <ModalLinkBtn key={data.title} data={data} />)
+                                                : null}
                                         </div>
                                     ))}
                                 </section>

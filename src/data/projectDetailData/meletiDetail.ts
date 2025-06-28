@@ -4,9 +4,10 @@ export const meletiDetail: DetailDataType = {
     title: "Meλeti",
     develop: "(1인 개발, 제작중)",
     description: "모바일 독서 기록 사이트",
-    skills: ["next", "ts", "scss", "firebase", "tanstack", "three"],
+    skills: ["next", "ts", "scss", "firebase", "tanstack", "redux", "three"],
     motivation:
-        "책에서 봤던 인상깊은 표현이나 문구들이 기록되고 공유되면 좋겠다는 생각에서 만들게 되었습니다. 긴 텀을 두고 읽은 책이나 완독한지 오래된 책은 언제 읽었는지나 읽으면서 느낀점, 인상깊은 내용들을 잊어버리기 쉽다는게 아쉬워서 이를 기록하고 공유할수 있는 플랫폼이 있으면 좋겠다고 생각했습니다.",
+        // "책에서 봤던 인상깊은 표현이나 문구들이 기록되고 공유되면 좋겠다는 생각에서 만들게 되었습니다. 긴 텀을 두고 읽은 책이나 완독한지 오래된 책은 언제 읽었는지나 읽으면서 느낀점, 인상깊은 내용들을 잊어버리기 쉽다는게 아쉬워서 이를 기록하고 공유할수 있는 플랫폼이 있으면 좋겠다고 생각했습니다.",
+        "책에서 본 인상깊은 표현이나 문구를 잊어버려 아쉬울때가 많았습니다. 기억하고 싶은 표현이나 문구를 저장하고 공유하며 독서기록까지 가능한 플랫폼을 PC와 모바일에서 접속할 수 있도록 웹페이지로 제작해보고 싶었습니다.",
     overview: [
         "베스트셀러 등의 도서 정보 조회 및 검색 기능",
         "개인 독서 기록 및 단어/문구 공유 커뮤니티 (구현중)",
@@ -35,7 +36,7 @@ export const meletiDetail: DetailDataType = {
             title: "3D 도서 구현 및 성능 최적화",
             content: [
                 "Three.js로 **3D 도서 구현**",
-                "canvas의 frameloop demand와 Three.js의 invalidate로 **CPU 및 GPU 부하 평균 47% 감소**",
+                "canvas에서 frameloop 및 invalidate 전략 적용으로 **애니메이션 idle 상태에서 CPU 및 GPU의 불필요한 연산 제거**",
             ],
             link: [
                 { title: "Three.js로 3D 도서 구현하기", url: "https://cstelladev.tistory.com/66" },
@@ -54,7 +55,8 @@ export const meletiDetail: DetailDataType = {
             content: [
                 "Firebase **Firestore**를 통한 **유저 개인 데이터 관리**",
                 "Firebase Authentication을 통한 **oAuth 기능** 구현",
-                "Next의 Route Handler를 통해 jwt를 발급하여 자체 회원 관리 및 로그인 기능 (구현중)",
+                "Next.js의 **Route Handler로 jwt를 발급**하여 자체 회원 관리 및 로그인 기능 (구현중)",
+                "**accessToken, refreshToken**을 각각 Redux, cookie로 관리",
             ],
         },
         {

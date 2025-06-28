@@ -16,6 +16,7 @@ export default function Introduce() {
 
     return (
         <section className="flex flex-col gap-10 ml-4">
+            <IntroduceCard title={data2.title} detail={data2.detail} content={data2.content} />
             <div>
                 <IntroduceCard title={data0.title} detail={data0.detail} content={data0.content} />
                 <ExtendBtn name="수상 내역" state={isOpenPrize} setState={setIsOpenPrize} />
@@ -28,7 +29,6 @@ export default function Introduce() {
                 ) : null}
             </div>
             {/* <IntroduceCard title={data1.title} detail={data1.detail} content={data1.content} /> */}
-            <IntroduceCard title={data2.title} detail={data2.detail} content={data2.content} />
         </section>
     );
 }

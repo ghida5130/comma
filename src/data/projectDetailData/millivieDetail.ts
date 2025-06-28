@@ -21,6 +21,13 @@ export const millivieDetail: DetailDataType = {
                 "Web Storage API의 **Session Storage**를 통해 **최근 조회한 영화 기능** 구현",
                 "oAuth, Credential Provider를 활용한 로그인 기능과 사용자 데이터 관리",
                 "TMDB API를 활용을 통해 외부 API 활용 학습",
+                "IntersectionObserver와 DOM 요소 참조를 통해 **무한스크롤 기능 구현**",
+            ],
+            link: [
+                {
+                    title: "IntersectionObserver로 무한스크롤 구현하기",
+                    url: "https://cstelladev.tistory.com/20",
+                },
             ],
         },
         {

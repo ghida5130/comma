@@ -8,7 +8,7 @@ const introduceData: IntroduceDataType[] = [
             "대학 소프트웨어 동아리 운영",
             "다양한 프로젝트의 팀장 역할 수행 및 수상 경험 다수",
             "동아리원 대상으로 C언어 및 개발 세미나를 정기적 진행하여 개발 언어 및 프로젝트 이해도 향상에 기여",
-            "Trello, Discord, Google Calendar 등을 통한 동아리 내 소통 체계 활용",
+            "Trello, Slack, Github 등을 통한 동아리 내 소통 체계 활용",
         ],
     },
     {
@@ -25,9 +25,10 @@ const introduceData: IntroduceDataType[] = [
         content: [
             "Django SSR 페이지 렌더링 속도 향상을 위한 **이미지 리사이즈 및 포맷 최적화**",
             "Core Web Vitals 개선을 통해 **lighthouse 평균 점수 21점 향상**",
-            "**BFF 서버, cron**을 통한 데이터 캐싱 및 가공",
-            "**Memoization, debounce**를 통한 실시간 필터링 기능 및 렌더링 최적화",
-            "canvas frameloop와 invalidate를 통한 Three.js 3D 객체 표현 최적화로 **CPU 및 GPU 부하 평균 47% 감소**",
+            "BFF 서버, cron 캐싱으로 **데이터 응답속도 평균 50% 이상 개선**",
+            "평균 5회 이상의 사용자 입력 이벤트를 debounce 처리하여 **렌더링 및 연산량 최소 80% 감소**",
+            "react-intersection-observer의 useInView를 적용해 보이지 않는 영역의 렌더링을 제한하여 **대규모 데이터 렌더링 시 프레임 드랍 제거**",
+            "Three.js canvas에서 frameloop 및 invalidate 전략 적용으로 **애니메이션 idle 상태에서 CPU 및 GPU의 불필요한 연산 제거**",
         ],
     },
 ];

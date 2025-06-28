@@ -65,20 +65,30 @@ export const milliUlsanDetail: DetailDataType = {
             ],
         },
         {
-            title: "실시간 검색기능 최적화",
+            title: "병원 정보 페이지 대규모 데이터 처리",
             content: [
-                "병원 조회 페이지에는 대규모 병원 데이터가 존재",
                 "메모이제이션을 통한 **불필요한 필터링 연산 방지**",
                 "debounce를 활용해 사용자 입력 종료 후 필터링 연산 처리 **(입력 시 과도한 연산 방지)**",
+                "controlled input과 필터링 연산의 state를 분리하여 **사용자 입력 지연 제거**",
+                "대용량 데이터 필터링 연산을 **웹워커**로 분리",
+                "react-intersection-observer의 useInView를 적용해 보이지 않는 영역의 렌더링을 제한하여 **프레임 드랍 제거**",
             ],
             link: [
                 {
-                    title: "React의 메모이제이션",
+                    title: "React의 Memoization",
                     url: "https://cstelladev.tistory.com/63",
                 },
                 {
                     title: "debounce를 통한 최적화",
                     url: "https://cstelladev.tistory.com/65",
+                },
+                {
+                    title: "웹워커와 controlled input",
+                    url: "https://cstelladev.tistory.com/78",
+                },
+                {
+                    title: "useInView로 레이아웃 연산 감소 시키기",
+                    url: "https://cstelladev.tistory.com/79",
                 },
             ],
         },
@@ -86,7 +96,7 @@ export const milliUlsanDetail: DetailDataType = {
             title: "BFF 서버 및 공공데이터 API 활용",
             content: [
                 "BFF 서버를 이용해 대기오염 데이터를 **프론트엔드에서 사용하기 편리**하도록 가공하여 제공",
-                "주기적으로 업데이트되는 날씨예보 데이터 **cron을 이용한 주기적 캐싱 및 가공**",
+                "주기적으로 업데이트되는 날씨예보 데이터 **cron**을 이용한 주기적 **캐싱 및 가공**",
                 "Express.js, AWS EC2, Route53 활용",
             ],
             link: [

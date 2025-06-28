@@ -22,7 +22,7 @@ export const travelDamoaDetail: DetailDataType = {
             ],
         },
         {
-            title: "Kakao API, Tour API를 이용한 지도 및 관광지 정보 표현",
+            title: "Django 백엔드 팀원과 협업 개발",
             content: [
                 "**Django 템플릿 문법**을 활용해 서버 데이터를 **동적으로 렌더링**",
                 "**변수명 및 데이터 구조 협의**를 위해 **싱크업 미팅**을 짧은 주기로 주도하며 협업",
@@ -30,9 +30,11 @@ export const travelDamoaDetail: DetailDataType = {
             ],
         },
         {
-            title: "이미지 사이즈 및 포맷 최적화",
+            title: "Kakao Maps API, Tour API를 이용한 지도 및 관광지 정보 표현",
             content: [
-                "Kakao API와 Tour API를 활용해 지도상에 혼잡도에 따라 다른 색을 가지는 핀으로 관광지를 표시하는 기능 제공",
+                "Kakao Maps API를 통해 관광지 정보 표시용 지도 활용",
+                "Tour API의 관광지 상세 정보 및 혼잡도 데이터를 활용",
+                "관광지 **혼잡도에 따라 다른 색을 가지는 핀**으로 관광지를 표시하는 기능 제공",
             ],
         },
     ],

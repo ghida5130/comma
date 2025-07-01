@@ -4,16 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import { throttle } from "lodash";
 
 // icons
-import homeIcon from "@/public/icons/header/home.svg";
 import aboutMeIcon from "@/public/icons/header/me.svg";
 import projectIcon from "@/public/icons/header/project.svg";
 import skillIcon from "@/public/icons/header/skill.svg";
 import activityIcon from "@/public/icons/header/activity.svg";
+import capabilityIcon from "@/public/icons/header/capability.svg";
 
 // styles
 import clsx from "clsx";
 import HeaderBtn from "../atoms/button/headerBtn";
-import { useScroll } from "framer-motion";
 
 export default function Header() {
     const [isVisible, setIsVisible] = useState(true);
@@ -53,6 +52,7 @@ export default function Header() {
 
     const buttonList = [
         { name: "소개", icon: aboutMeIcon, href: "/me" },
+        { name: "역량", icon: capabilityIcon, href: "/me" },
         { name: "기술", icon: skillIcon, href: "/me" },
         { name: "주요 활동", icon: activityIcon, href: "/me" },
         { name: "프로젝트", icon: projectIcon, href: "/projects" },

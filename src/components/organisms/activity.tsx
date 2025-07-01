@@ -13,7 +13,7 @@ export default function Activity() {
             <ActivityCard
                 icon={clubIcon}
                 title="소프트웨어 개발 동아리"
-                detail="앱, 웹, 임베디드 및 AI 관련 개발 및 학습"
+                detail="앱, 웹, 임베디드, AI 관련 개발 및 학습"
                 award="A.I.S. 학술동아리"
             />
             <Prize

@@ -11,6 +11,7 @@ import Projects from "@/components/organisms/projects";
 import { useCallback, useState } from "react";
 import Introduce from "@/components/organisms/introduce";
 import ExtendBtn from "@/components/atoms/button/extendBtn";
+import Capability from "@/components/organisms/capability";
 
 export default function Home() {
     const [isSkillOpen, setIsSkillOpen] = useState(false);
@@ -25,26 +26,32 @@ export default function Home() {
             </div>
             <ScrollNum num={1}>
                 <FadeInSection>
-                    <SectionTitle title="소개" />
+                    <SectionTitle title="Introduce" />
                     <Introduce />
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={2}>
                 <FadeInSection>
-                    <SectionTitle title="기술" />
-                    <ExtendBtn name="사용 기술 목록" state={isSkillOpen} setState={setIsSkillOpen} />
-                    {isSkillOpen ? <Skills /> : <></>}
+                    <SectionTitle title="Capabilities" />
+                    <Capability />
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={3}>
                 <FadeInSection>
-                    <SectionTitle title="주요 활동" />
-                    <Activity />
+                    <SectionTitle title="Skills" />
+                    <ExtendBtn name="사용 기술 목록" state={isSkillOpen} setState={setIsSkillOpen} />
+                    {isSkillOpen ? <Skills /> : <></>}
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={4}>
                 <FadeInSection>
-                    <SectionTitle title="프로젝트" />
+                    <SectionTitle title="Experiences" />
+                    <Activity />
+                </FadeInSection>
+            </ScrollNum>
+            <ScrollNum num={5}>
+                <FadeInSection>
+                    <SectionTitle title="Projects" />
                     <Projects />
                 </FadeInSection>
             </ScrollNum>

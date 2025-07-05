@@ -13,7 +13,7 @@ export default function IntroduceDetailT({ data }: { data: string }) {
                         {parts.map((part, i) => {
                             if (part.startsWith("**") && part.endsWith("**")) {
                                 return (
-                                    <span key={i} className="font-semibold text-[#8aaaff]">
+                                    <span key={i} className="font-medium text-[#8aaaff]">
                                         {part.slice(2, -2)}
                                     </span>
                                 );

@@ -25,8 +25,9 @@ const introduceData: IntroduceDataType[] = [
         content: [
             "Django SSR 페이지 렌더링 속도 향상을 위한 **이미지 리사이즈 및 포맷 최적화**",
             "Core Web Vitals 개선을 통해 **lighthouse 평균 점수 21점 향상**",
-            "대규모 데이터 필터링 연산을 **Web Worker로 분리**하여 메인 스레드의 연산 최적화",
+            "대규모 데이터 필터링 연산을 **웹워커로 분리**하여 메인 스레드의 연산 최적화",
             "Three.js canvas에서 frameloop 및 invalidate 전략 적용으로 **애니메이션 idle 상태에서 CPU 및 GPU의 불필요한 연산 제거**",
+            "ISR을 적용해 독서기록 홈페이지 메인 페이지의 **초기 접속 시간 73% 단축 (1.5s -> 0.4s)**",
         ],
     },
     {

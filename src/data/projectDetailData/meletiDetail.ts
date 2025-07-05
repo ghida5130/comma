@@ -47,8 +47,9 @@ export const meletiDetail: DetailDataType = {
             ],
         },
         {
-            title: "React-Query를 통한 도서 API 활용",
-            content: ["캐싱, 리페치 전략을 적용하여 **API 호출 최적화**", "Aladin 도서 정보 API 활용"],
+            title: "Next.js ISR 적용",
+            content: ["메인 페이지에 ISR을 적용해 **초기 페이지 접속시간 73% 감소 (1.5s -> 0.4s)**"],
+            link: [{ title: "Next.js ISR 정리", url: "https://cstelladev.tistory.com/84" }],
         },
         {
             title: "유저데이터 및 회원 관리 (구현중)",

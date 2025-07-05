@@ -29,7 +29,7 @@ const myProjectData: MyProjectDataType = {
             "개인 독서 기록 및 단어/문구 공유 커뮤니티 (구현중)",
             "시맨틱태그, JSON-LD, 메타데이터 및 OpenGraph를 통한 SEO",
             "Three.js 애니메이션 idle 상태의 CPU 및 GPU 불필요한 연산 제거",
-            "Firebase와 React-Query, jwt로 회원 기능 및 데이터 관리",
+            "메인페이지 ISR 적용으로 초기 페이지 접속시간 73% 감소 (1.5s -> 0.4s)",
         ],
     },
     milliulsan: {

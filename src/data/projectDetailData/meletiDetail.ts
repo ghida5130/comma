@@ -9,9 +9,9 @@ export const meletiDetail: DetailDataType = {
         // "책에서 봤던 인상깊은 표현이나 문구들이 기록되고 공유되면 좋겠다는 생각에서 만들게 되었습니다. 긴 텀을 두고 읽은 책이나 완독한지 오래된 책은 언제 읽었는지나 읽으면서 느낀점, 인상깊은 내용들을 잊어버리기 쉽다는게 아쉬워서 이를 기록하고 공유할수 있는 플랫폼이 있으면 좋겠다고 생각했습니다.",
         "책에서 본 인상깊은 표현이나 문구를 잊어버려 아쉬울때가 많았습니다. 기억하고 싶은 표현이나 문구를 저장하고 공유하며 독서기록까지 가능한 플랫폼을 PC와 모바일에서 접속할 수 있도록 웹페이지로 제작해보고 싶었습니다.",
     overview: [
+        "3D로 도서 미리보기 및 도서 별 사이즈 비교",
         "베스트셀러 등의 도서 정보 조회 및 검색 기능",
         "개인 독서 기록 및 단어/문구 공유 커뮤니티 (구현중)",
-        "3D로 구현한 도서 미리보기 기능",
         "구글, 깃허브 로그인 기능",
     ],
     // learned: [
@@ -61,7 +61,7 @@ export const meletiDetail: DetailDataType = {
             ],
         },
         {
-            title: "SSR을 활용한 SEO 관리",
+            title: "서버사이드 컴포넌트를 활용한 SEO 관리",
             content: [
                 "시맨틱태그를 통한 **구조화된 데이터 학습 및 적용**",
                 "**JSON-LD, 메타데이터** 적용",
@@ -89,6 +89,11 @@ export const meletiDetail: DetailDataType = {
             title: "meleti - 도서 상세 페이지 : 3D로 책 둘러보기 (모바일)",
             content:
                 "https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/meleti/meleti_4.webp",
+        },
+        {
+            title: "meleti - 도서 상세 페이지 : 3D로 책 비교하기",
+            content:
+                "https://raw.githubusercontent.com/ghida5130/image-assets/refs/heads/main/comma/projects/meleti/meleti_5.webp",
         },
     ],
 };

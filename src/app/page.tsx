@@ -26,32 +26,32 @@ export default function Home() {
             </div>
             <ScrollNum num={1}>
                 <FadeInSection>
-                    <SectionTitle title="Introduce" />
+                    <SectionTitle title="소개" />
                     <Introduce />
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={2}>
                 <FadeInSection>
-                    <SectionTitle title="Capabilities" />
+                    <SectionTitle title="역량" />
                     <Capability />
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={3}>
                 <FadeInSection>
-                    <SectionTitle title="Skills" />
+                    <SectionTitle title="기술" />
                     <ExtendBtn name="사용 기술 목록" state={isSkillOpen} setState={setIsSkillOpen} />
                     {isSkillOpen ? <Skills /> : <></>}
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={4}>
                 <FadeInSection>
-                    <SectionTitle title="Experiences" />
+                    <SectionTitle title="주요 활동" />
                     <Activity />
                 </FadeInSection>
             </ScrollNum>
             <ScrollNum num={5}>
                 <FadeInSection>
-                    <SectionTitle title="Projects" />
+                    <SectionTitle title="프로젝트" />
                     <Projects />
                 </FadeInSection>
             </ScrollNum>

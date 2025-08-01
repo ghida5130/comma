@@ -11,11 +11,7 @@ const myProjectData: MyProjectDataType = {
         github: "https://github.com/ghida5130/comma",
         skills: ["next", "ts", "tailwind", "redux"],
 
-        introduce: [
-            "간단소개, 프로젝트를 담은 포트폴리오 사이트",
-            "TailwindCSS를 통한 스타일링",
-            "Redux를 활용한 Modal 관리",
-        ],
+        introduce: ["간단소개, 프로젝트를 담은 포트폴리오 사이트", "Redux를 활용한 Modal 관리"],
     },
     meleti: {
         title: "Meλeti",
@@ -26,10 +22,10 @@ const myProjectData: MyProjectDataType = {
         skills: ["next", "ts", "scss", "firebase", "tanstack", "redux", "three"],
         introduce: [
             "베스트셀러 등의 도서 정보 조회 및 검색 기능",
-            "개인 독서 기록 및 단어/문구 공유 커뮤니티 (구현중)",
-            "시맨틱태그, JSON-LD, 메타데이터 및 OpenGraph를 통한 SEO",
+            "3D로 도서 조회 및 도서 비교 기능 제공",
             "Three.js 애니메이션 idle 상태의 CPU 및 GPU 불필요한 연산 제거",
-            "메인페이지 ISR 적용으로 초기 페이지 접속시간 73% 감소 (1.5s -> 0.4s)",
+            "ISR, Image priority로 메인 페이지 접속시간 최적화",
+            "시맨틱태그, JSON-LD, 메타데이터 및 OpenGraph를 통한 SEO",
         ],
     },
     milliulsan: {

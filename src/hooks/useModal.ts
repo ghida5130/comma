@@ -9,17 +9,17 @@ export const useModal = () => {
     const modalName = useAppSelector((state) => state.modal.modalName);
 
     // 모달이 열릴 때 body overflow 막기
-    useEffect(() => {
-        if (isActive) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
+    // useEffect(() => {
+    //     if (isActive) {
+    //         document.body.style.overflow = "hidden";
+    //     } else {
+    //         document.body.style.overflow = "";
+    //     }
 
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [isActive]);
+    //     return () => {
+    //         document.body.style.overflow = "";
+    //     };
+    // }, [isActive]);
 
     // 모달 열기/닫기
     const showModal = (name: string) => dispatch(openModal(name));

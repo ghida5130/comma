@@ -1,10 +1,11 @@
 import SkillList from "@/components/molecules/skillList";
 
 import MySkillData from "@/data/mySkillData";
+import styles from "@/styles/content.module.css";
 
 export default function Skills() {
     return (
-        <section className="flex flex-col gap-10">
+        <section className={styles.rows}>
             {MySkillData.map(({ title, skills }) => (
                 <SkillList key={title} title={title} skills={skills} />
             ))}

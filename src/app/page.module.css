@@ -1,9 +1,25 @@
-.items {
-    width: 100vw;
-    height: 100vh;
+.portfolio {
+    position: relative;
+    width: min(1080px, calc(100% - 80px));
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 50px;
-    align-items: center;
+    gap: 64px;
+}
+
+.section {
+    min-width: 0;
+}
+
+@media (max-width: 760px) {
+    .portfolio {
+        width: calc(100% - 40px);
+        gap: 48px;
+    }
+}
+
+@media (max-width: 380px) {
+    .portfolio {
+        width: calc(100% - 32px);
+    }
 }

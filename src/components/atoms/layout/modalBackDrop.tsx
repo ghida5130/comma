@@ -2,17 +2,22 @@
 
 import { useModal } from "@/hooks/useModal";
 import React from "react";
+import { createPortal } from "react-dom";
+import styles from "@/styles/projects.module.css";
 
 export default function ModalBackDrop({ children }: { children: React.ReactNode }) {
     const { hideModal } = useModal();
-    return (
+    if (typeof document === "undefined") return null;
+
+    return createPortal(
         <div
-            onClick={() => {
-                hideModal();
+            onClick={(event) => {
+                if (event.target === event.currentTarget) hideModal();
             }}
-            className="fixed top-0 left-0 w-[100vw] h-[100vh] bg-[rbga(0,0,0,0.5)] backdrop-blur-xs z-9999 flex justify-center items-center"
+            className={styles.backdrop}
         >
             {children}
-        </div>
+        </div>,
+        document.body
     );
 }

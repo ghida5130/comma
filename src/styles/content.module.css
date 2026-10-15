@@ -1,0 +1,339 @@
+.rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.copyRow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.copyRow.introduceRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+}
+
+.introduceRow .copyHeading {
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+.introduceRow .copyBody {
+    max-width: 48rem;
+}
+
+.rows > .copyRow:first-child,
+.rows > div:first-child > .copyRow {
+    padding-top: 0;
+}
+
+.copyHeading {
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.copyBody {
+    min-width: 0;
+    max-width: 68ch;
+}
+
+.copyLead {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.55;
+    word-break: keep-all;
+}
+
+.detailList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 1.15rem;
+    list-style: disc;
+}
+
+.detailList > li {
+    padding-left: 0.25rem;
+}
+
+.detailList > li::marker {
+    color: var(--text-muted);
+    font-size: 0.75em;
+}
+
+.detailText {
+    color: var(--text-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.detailEmphasis {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.introduceSummary {
+    display: flex;
+    max-width: 52rem;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.introduceSummary .copyHeading {
+    margin-bottom: 4px;
+    text-wrap: balance;
+}
+
+.moreDetails {
+    margin-top: 8px;
+}
+
+.moreDetails > summary {
+    width: fit-content;
+    min-height: 40px;
+    padding: 7px 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.moreDetails > summary:hover {
+    color: var(--text-primary);
+}
+
+.moreDetails[open] > summary {
+    margin-bottom: 8px;
+}
+
+.introduceEvidence {
+    max-width: 52rem;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.capabilityEvidence {
+    margin-top: 12px;
+}
+
+.prizeToggle {
+    padding-top: 4px;
+}
+
+.activityGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 16px;
+}
+
+.prizeGrid {
+    margin-top: 20px;
+}
+
+.activityCard {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--surface);
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.activityIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.activityCategory {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.activityLabel {
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.activityDetail {
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.activityDate {
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    font-variant-numeric: tabular-nums;
+}
+
+.activityValue {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.activityHeading {
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+}
+
+.activityDetails {
+    margin-top: 16px;
+}
+
+.activityDetails > summary {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border: 1px solid rgba(165, 192, 255, 0.38);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 600;
+    word-break: keep-all;
+    list-style: none;
+}
+
+.activityDetails > summary::-webkit-details-marker {
+    display: none;
+}
+
+.activityDetails > summary::after {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    content: "";
+    transform: rotate(45deg);
+}
+
+.activityDetails > summary:hover {
+    border-color: var(--accent);
+}
+
+.activityDetails[open] > summary::after {
+    transform: rotate(225deg);
+}
+
+.activityToggleLabel {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.showWhenOpen,
+.activityDetails[open] .showWhenClosed {
+    display: none;
+}
+
+.activityDetails[open] .showWhenOpen {
+    display: inline;
+}
+
+.skillRow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skillRow:first-child {
+    padding-top: 0;
+}
+
+.skillHeading {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.skillItems {
+    display: flex;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (min-width: 640px) {
+    .activityGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 1fr;
+    }
+
+    .skillRow {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (min-width: 960px) {
+    .copyRow {
+        grid-template-columns: minmax(190px, 0.7fr) minmax(0, 2fr);
+        gap: 28px;
+        padding: 24px 0;
+    }
+
+    .activityGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .activityGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 639px) {
+    .detailText {
+        font-size: 17px;
+    }
+
+    .activityCard {
+        padding: 18px;
+    }
+}

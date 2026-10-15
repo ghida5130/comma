@@ -1,18 +1,22 @@
 import FlexCard from "@/components/atoms/layout/flexCard";
 import qualificationIcon from "@/public/icons/me/qualification.svg";
 import Image from "next/image";
+import styles from "@/styles/content.module.css";
 
 interface MajorDataProps {
-    date: string;
+    date?: string;
     title: string;
 }
 
 export default function Qualification({ date, title }: MajorDataProps) {
     return (
         <FlexCard>
-            <Image src={qualificationIcon} alt="prize icon" width={50} />
-            <p className="text-sm mt-3">{date}</p>
-            <p className="text-2xl mt-1">{title}</p>
+            <div className={styles.activityCategory}>
+                <Image src={qualificationIcon} alt="" width={24} height={24} className={styles.activityIcon} />
+                <p className={styles.activityLabel}>자격</p>
+            </div>
+            <h3 className={styles.activityHeading}>{title}</h3>
+            {date ? <p className={styles.activityDate}>{date}</p> : null}
         </FlexCard>
     );
 }

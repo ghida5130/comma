@@ -1,0 +1,581 @@
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+}
+
+.card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(164, 180, 204, 0.18);
+    border-radius: 16px;
+    background: #101725;
+    cursor: pointer;
+    transition: border-color 160ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+    border-color: rgba(165, 192, 255, 0.55);
+}
+
+.preview {
+    position: relative;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(164, 180, 204, 0.18);
+    background: #1b2230;
+}
+
+.preview img {
+    object-fit: cover;
+    object-position: center top;
+}
+
+.previewPlaceholder {
+    display: flex;
+    aspect-ratio: auto;
+    min-height: 144px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px;
+    text-align: center;
+}
+
+.previewLabel {
+    color: #c4cddc;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.previewNote {
+    color: #929eb2;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.moreProjects {
+    margin-top: 24px;
+}
+
+.moreProjects > summary {
+    width: fit-content;
+    min-height: 44px;
+    padding: 10px 0;
+    color: #b7c0d0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.moreProjects > summary:hover {
+    color: #f1f3f7;
+}
+
+.moreProjects[open] > summary {
+    margin-bottom: 16px;
+}
+
+.emptyMedia {
+    padding: 18px;
+    border: 1px solid #d9dee6;
+    border-radius: 8px;
+    color: #647084;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.cardContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.title {
+    margin: 0;
+    color: #f1f3f7;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+}
+
+.develop {
+    margin-top: 6px;
+    color: #a5afc0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.description {
+    margin-top: 10px;
+    color: #f1f3f7;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.skills > :global(.skill-tag) {
+    padding: 5px 9px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.skills img {
+    width: 18px;
+    height: 18px;
+}
+
+.highlights {
+    display: grid;
+    gap: 6px;
+    margin: 18px 0 12px;
+    padding-left: 18px;
+    color: #b7c0d0;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    list-style: disc;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.highlights li::marker {
+    color: #788aa6;
+    font-size: 0.7em;
+}
+
+.highlights strong {
+    color: #e2e8f2;
+    font-weight: 600;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(164, 180, 204, 0.18);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 16px;
+}
+
+.link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 7px;
+    border-radius: 4px;
+    color: #a5c0ff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-underline-offset: 4px;
+}
+
+.link:hover {
+    color: #d1dfff;
+    text-decoration: underline;
+}
+
+.detailButton {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-left: auto;
+    padding: 10px 14px;
+    border: 1px solid rgba(165, 192, 255, 0.4);
+    border-radius: 8px;
+    background: #1c2b46;
+    color: #e2eaff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.detailButton:hover {
+    border-color: #a5c0ff;
+    background: #273b5b;
+}
+
+.link:focus-visible,
+.detailButton:focus-visible,
+.closeButton:focus-visible,
+.imageCloseButton:focus-visible {
+    outline: 2px solid #a5c0ff;
+    outline-offset: 4px;
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(3, 7, 15, 0.82);
+    backdrop-filter: blur(6px);
+}
+
+.dialog {
+    position: relative;
+    display: flex;
+    width: min(100%, 880px);
+    max-height: calc(100dvh - 48px);
+    min-height: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(164, 180, 204, 0.22);
+    border-radius: 16px;
+    background: #101725;
+    box-shadow: 0 24px 100px rgba(0, 0, 0, 0.4);
+}
+
+.modalHeader {
+    flex: none;
+    padding: 24px 80px 20px 28px;
+    color: #f1f3f7;
+}
+
+.modalTitle {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+}
+
+.modalTitle:focus {
+    outline: none;
+}
+
+.modalDescription {
+    margin-top: 10px;
+    color: #c4cddc;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.55;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.modalBody {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    gap: 28px;
+    overflow-y: auto;
+    padding: 28px;
+    background: #f4f5f7;
+    color: #242b36;
+    color-scheme: light;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+}
+
+.modalCategory {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d9dee6;
+    color: #1e2633;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.modalSkills {
+    --border-color: #d6dce5;
+    margin: 0 0 14px;
+    color: #394252;
+}
+
+.modalContent {
+    display: flex;
+    gap: 10px;
+    margin: 7px 0;
+    color: #394252;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.contentBullet {
+    flex: none;
+    color: #6f7d90;
+}
+
+.contentText {
+    min-width: 0;
+}
+
+.contentText strong {
+    color: #243b61;
+    font-weight: 700;
+}
+
+.modalDetailTitle {
+    margin: 22px 0 10px;
+    color: #242b36;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.45;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.learnedItem:first-of-type .modalDetailTitle {
+    margin-top: 0;
+}
+
+.modalLink {
+    display: flex;
+    width: fit-content;
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+    border-radius: 4px;
+    color: #315ba5;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+.modalLink img {
+    flex: none;
+}
+
+.modalLink:hover {
+    color: #1f4380;
+    text-decoration: underline;
+}
+
+.modalLink:focus-visible,
+.screenshotButton:focus-visible {
+    outline: 2px solid #315ba5;
+    outline-offset: 4px;
+}
+
+.closeButton,
+.imageCloseButton {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(164, 180, 204, 0.25);
+    border-radius: 8px;
+    background: #1b2536;
+    transition: background-color 160ms ease;
+}
+
+.closeButton:hover,
+.imageCloseButton:hover {
+    background: #2a3850;
+}
+
+.screenshotGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.screenshotButton {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #d6dce5;
+    border-radius: 10px;
+    background: #fff;
+    color: #394252;
+    text-align: left;
+}
+
+.screenshotPreview {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e6e9ee;
+}
+
+.screenshotPreview img {
+    object-fit: cover;
+    object-position: center top;
+    transition: opacity 160ms ease;
+}
+
+.screenshotButton:hover .screenshotPreview img {
+    opacity: 0.85;
+}
+
+.screenshotCaption {
+    display: block;
+    padding: 11px 13px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.imageBackdrop {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(3, 7, 15, 0.96);
+}
+
+.imageDialog {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 80px 32px 24px;
+    color: #f1f3f7;
+}
+
+.imageHint {
+    flex: none;
+    margin-bottom: 16px;
+    color: #b7c0d0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.imageCanvas {
+    position: relative;
+    min-height: 0;
+    flex: 1;
+}
+
+.imageCanvas img {
+    object-fit: contain;
+}
+
+.imageTitle {
+    flex: none;
+    margin-top: 18px;
+    color: #e1e6ef;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 960px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        gap: 22px;
+    }
+
+    .cardContent {
+        padding: 22px;
+    }
+
+    .title {
+        font-size: 27px;
+    }
+
+    .backdrop {
+        padding: 12px;
+    }
+
+    .dialog {
+        max-height: calc(100dvh - 24px);
+        border-radius: 12px;
+    }
+
+    .modalHeader {
+        padding: 22px 68px 22px 22px;
+    }
+
+    .modalTitle {
+        font-size: 26px;
+    }
+
+    .modalBody {
+        gap: 24px;
+        padding: 22px;
+    }
+
+    .closeButton {
+        top: 16px;
+        right: 14px;
+    }
+
+    .screenshotGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .imageDialog {
+        padding: 76px 16px 22px;
+    }
+
+    .imageCloseButton {
+        top: 16px;
+        right: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .detailButton,
+    .closeButton,
+    .imageCloseButton,
+    .screenshotPreview img {
+        transition: none;
+    }
+}

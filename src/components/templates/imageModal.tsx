@@ -1,24 +1,63 @@
+"use client";
+
 import { useImageModal } from "@/hooks/useImageModal";
 import Image from "next/image";
 import CloseImageModalBtn from "../atoms/button/closeImageModalBtn";
+import ImageModalBackDrop from "../atoms/layout/imageModalBackDrop";
+import styles from "@/styles/projects.module.css";
+import { useEffect, useRef } from "react";
+import { useAppDispatch } from "@/lib/hooks";
+import { closeImageModal } from "@/lib/features/modal/imageModalSlice";
 
-export default function ImageModal() {
+export default function ImageModal({ returnFocus }: { returnFocus: HTMLButtonElement | null }) {
     const { imageModalName, imageModalUrl, hideImageModal } = useImageModal();
+    const dispatch = useAppDispatch();
+    const dialogRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const previousFocus = returnFocus ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+        const closeButton = dialogRef.current?.querySelector<HTMLButtonElement>("button");
+        closeButton?.focus({ preventScroll: true });
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                dispatch(closeImageModal());
+            } else if (event.key === "Tab") {
+                event.preventDefault();
+                closeButton?.focus();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+            previousFocus?.focus({ preventScroll: true });
+        };
+    }, [dispatch, returnFocus]);
 
     return (
-        <div
-            className="fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-black xl:bg-[rgba(0,0,0,0.8)]"
-            onClick={(e) => {
-                e.stopPropagation();
-                hideImageModal();
-            }}
-        >
-            <CloseImageModalBtn />
-            <p className="text-lg text-gray-300 mb-3">이미지를 클릭하면 닫힙니다.</p>
-            <div className="w-full h-full xl:w-[80%] xl:h-[80%] relative">
-                <Image src={imageModalUrl} alt={imageModalName} fill className="object-contain" />
+        <ImageModalBackDrop>
+            <div
+                ref={dialogRef}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="image-modal-title"
+                aria-describedby="image-modal-hint"
+                data-image-dialog
+                className={styles.imageDialog}
+                onClick={(event) => {
+                    event.stopPropagation();
+                    hideImageModal();
+                }}
+            >
+                <CloseImageModalBtn />
+                <p id="image-modal-hint" className={styles.imageHint}>이미지를 클릭하면 닫힙니다.</p>
+                <div className={styles.imageCanvas}>
+                    <Image src={imageModalUrl} alt={imageModalName} fill sizes="100vw" />
+                </div>
+                <h4 id="image-modal-title" className={styles.imageTitle}>{imageModalName}</h4>
             </div>
-            <p className="text-xl mt-3">{imageModalName}</p>
-        </div>
+        </ImageModalBackDrop>
     );
 }

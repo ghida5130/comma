@@ -1,6 +1,7 @@
 "use client";
 
 import { useModal } from "@/hooks/useModal";
+import styles from "@/styles/projects.module.css";
 
 interface DetailBtnType {
     innerText: string;
@@ -12,10 +13,14 @@ export default function DetailBtn({ innerText, name }: DetailBtnType) {
 
     return (
         <button
+            type="button"
+            aria-haspopup="dialog"
+            aria-label={`${name} ${innerText}`}
             onClick={() => showModal(name)}
-            className="p-2 w-30 mx-auto bg-[#566eaf] hover:bg-[#8392bd] rounded-md font-medium duration-200 mt-2"
+            className={styles.detailButton}
         >
             {innerText}
+            <span aria-hidden="true">→</span>
         </button>
     );
 }

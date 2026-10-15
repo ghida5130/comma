@@ -1,6 +1,6 @@
 import { useCategoryScroll } from "@/app/scrollContext";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import styles from "@/styles/chrome.module.css";
 
 interface ButtonProps {
     name: string;
@@ -10,11 +10,19 @@ interface ButtonProps {
 }
 
 export default function HeaderBtn({ name, icon, href, idx }: ButtonProps) {
-    const { scrollTo } = useCategoryScroll();
+    const { scrollTo, activeIndex } = useCategoryScroll();
     return (
-        <button className="flex flex-col gap-1.5 w-16 items-center header-btn-hover" onClick={() => scrollTo(idx + 1)}>
-            <Image src={icon} alt={`${name} icon`} width={25} />
-            <p>{name}</p>
-        </button>
+        <a
+            href={href}
+            className={styles.navButton}
+            aria-current={activeIndex === idx + 1 ? "location" : undefined}
+            onClick={(event) => {
+                event.preventDefault();
+                scrollTo(idx + 1);
+            }}
+        >
+            <Image src={icon} alt="" width={18} height={18} />
+            <span>{name}</span>
+        </a>
     );
 }

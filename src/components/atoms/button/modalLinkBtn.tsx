@@ -1,6 +1,7 @@
 import Image from "next/image";
 import modalLinkIcon from "@/public/icons/modal/modalLink.svg";
 import Link from "next/link";
+import styles from "@/styles/projects.module.css";
 
 interface ModalLinkBtnType {
     data: {
@@ -15,9 +16,10 @@ export default function ModalLinkBtn({ data }: ModalLinkBtnType) {
             target="_blank"
             rel="noopener noreferrer"
             href={data.url}
-            className="flex w-fit gap-2 text-lg ml-3 mb-1 text-blue-600 font-medium hover:font-bold"
+            aria-label={`${data.title} (새 탭)`}
+            className={styles.modalLink}
         >
-            <Image src={modalLinkIcon} alt={data.title + "link button"} width={15} />
+            <Image src={modalLinkIcon} alt="" aria-hidden="true" width={15} height={15} />
             {data.title}
         </Link>
     );

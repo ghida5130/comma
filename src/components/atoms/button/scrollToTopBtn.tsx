@@ -12,11 +12,13 @@ export default function ScrollToTopBtn() {
         };
 
         window.addEventListener("scroll", toggleVisibility);
+        toggleVisibility();
         return () => window.removeEventListener("scroll", toggleVisibility);
     }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
     };
 
     return (
@@ -24,9 +26,11 @@ export default function ScrollToTopBtn() {
             {visible && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-6 right-6 px-4 py-2 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-700 transition"
+                    type="button"
+                    aria-label="맨 위로 이동"
+                    className="scroll-top-button"
                 >
-                    ↑ Top
+                    <span aria-hidden="true">↑</span>
                 </button>
             )}
         </>

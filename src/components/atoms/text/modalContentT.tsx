@@ -1,19 +1,19 @@
+import styles from "@/styles/projects.module.css";
+
 export default function ModalContentT({ data }: { data: string }) {
     const parts = data.split(/(\*\*.*?\*\*)/);
 
     return (
-        <p className="text-lg ml-3 mb-1">
-            ▸{" "}
-            {parts.map((part, i) => {
-                if (part.startsWith("**") && part.endsWith("**")) {
-                    return (
-                        <span key={i} className="font-semibold text-[#000075]">
-                            {part.slice(2, -2)}
-                        </span>
-                    );
-                }
-                return <span key={i}>{part}</span>;
-            })}
+        <p className={styles.modalContent}>
+            <span className={styles.contentBullet} aria-hidden="true">▸</span>
+            <span className={styles.contentText}>
+                {parts.map((part, i) => {
+                    if (part.startsWith("**") && part.endsWith("**")) {
+                        return <strong key={i}>{part.slice(2, -2)}</strong>;
+                    }
+                    return <span key={i}>{part}</span>;
+                })}
+            </span>
         </p>
     );
 

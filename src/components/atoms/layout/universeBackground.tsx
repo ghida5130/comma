@@ -13,6 +13,8 @@ export default function UniverseBackground() {
         if (!canvas) return;
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let animationFrame = 0;
 
         let w = window.innerWidth;
         let h = window.innerHeight;
@@ -25,7 +27,6 @@ export default function UniverseBackground() {
         };
 
         setCanvasSize();
-        window.addEventListener("resize", setCanvasSize);
 
         // 별 생성 (밀도)
         const makeStars = (count: number) => {
@@ -76,15 +77,38 @@ export default function UniverseBackground() {
             }
             offsetRef.current += 0.1; // 하늘이 천천히 흐르는 속도
             draw();
-            requestAnimationFrame(tick);
+            if (!reducedMotion.matches && !document.hidden) {
+                animationFrame = requestAnimationFrame(tick);
+            }
         };
 
-        tick();
+        const updateMotion = () => {
+            cancelAnimationFrame(animationFrame);
+            if (reducedMotion.matches) {
+                fadeRef.current = 1;
+                draw();
+            } else if (!document.hidden) {
+                tick();
+            }
+        };
+
+        const handleResize = () => {
+            setCanvasSize();
+            updateMotion();
+        };
+
+        updateMotion();
+        window.addEventListener("resize", handleResize);
+        reducedMotion.addEventListener("change", updateMotion);
+        document.addEventListener("visibilitychange", updateMotion);
 
         return () => {
-            window.removeEventListener("resize", setCanvasSize);
+            window.removeEventListener("resize", handleResize);
+            cancelAnimationFrame(animationFrame);
+            reducedMotion.removeEventListener("change", updateMotion);
+            document.removeEventListener("visibilitychange", updateMotion);
         };
     }, []);
 
-    return <canvas ref={canvasRef} className="fixed top-0 left-0 z-[-1] w-full h-full" />;
+    return <canvas ref={canvasRef} aria-hidden="true" className="fixed top-0 left-0 z-[-1] w-full h-full pointer-events-none opacity-35" />;
 }

@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import styles from "@/styles/me.module.scss";
-import React from "react";
+import styles from "@/styles/chrome.module.css";
 import Link from "next/link";
 
 interface LinkBtnTypes {
@@ -17,17 +16,14 @@ export default function LinkBtn({ url, title, logo }: LinkBtnTypes) {
         return (
             <a
                 href={url}
-                className={`${styles.linkBtn} w-[150px] h-[40px] flex items-center justify-start gap-[10px] relative bg-neutral-700 hover:bg-neutral-600 rounded-md font-medium px-[15px] duration-200`}
+                className={styles.profileLink}
+                aria-label={`${title} (새 탭에서 열기)`}
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <Image src={logo} alt="tistory button" width={15} />
+                <Image src={logo} alt="" width={16} height={16} />
                 {title}
-                <div
-                    className={`${styles.arrow} absolute right-0 w-[30px] height-full text-2xl flex items-center justify-center`}
-                >
-                    ›
-                </div>
+                <span className={styles.arrow} aria-hidden="true">↗</span>
             </a>
         );
     }
@@ -36,15 +32,11 @@ export default function LinkBtn({ url, title, logo }: LinkBtnTypes) {
     return (
         <Link
             href={url}
-            className={`${styles.linkBtn} w-[150px] h-[40px] flex items-center justify-start gap-[10px] relative bg-neutral-700 hover:bg-neutral-600 rounded-md font-medium px-[15px] duration-200`}
+            className={styles.profileLink}
         >
-            <Image src={logo} alt="tistory button" width={15} />
+            <Image src={logo} alt="" width={16} height={16} />
             {title}
-            <div
-                className={`${styles.arrow} absolute right-0 w-[30px] height-full text-2xl flex items-center justify-center`}
-            >
-                ›
-            </div>
+            <span className={styles.arrow} aria-hidden="true">›</span>
         </Link>
     );
 }

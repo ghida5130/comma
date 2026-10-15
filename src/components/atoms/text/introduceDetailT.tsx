@@ -1,10 +1,11 @@
+import styles from "@/styles/content.module.css";
+
 export default function IntroduceDetailT({ data }: { data: string }) {
     // 먼저 줄바꿈 단위로 나누고, 각 줄마다 '**' 감싼 부분 처리
     const lines = data.split("\n");
 
     return (
-        <p className="text-lg">
-            ▸{" "}
+        <p className={styles.detailText}>
             {lines.map((line, lineIndex) => {
                 const parts = line.split(/(\*\*.*?\*\*)/);
 
@@ -13,9 +14,9 @@ export default function IntroduceDetailT({ data }: { data: string }) {
                         {parts.map((part, i) => {
                             if (part.startsWith("**") && part.endsWith("**")) {
                                 return (
-                                    <span key={i} className="font-medium text-[#8aaaff]">
+                                    <strong key={i} className={styles.detailEmphasis}>
                                         {part.slice(2, -2)}
-                                    </span>
+                                    </strong>
                                 );
                             }
                             return <span key={i}>{part}</span>;

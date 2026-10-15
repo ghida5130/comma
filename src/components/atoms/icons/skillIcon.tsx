@@ -1,7 +1,7 @@
-import Image, { StaticImageData } from "next/image";
-import React from "react";
+import Image from "next/image";
 
 import skillIconData from "@/data/skillIconData";
+import skillLabelData from "@/data/skillLabelData";
 
 interface SkillIconType {
     type: string;
@@ -10,14 +10,10 @@ interface SkillIconType {
 export default function SkillIcon({ type }: SkillIconType) {
     const data = skillIconData[type];
 
-    if (!data) return null;
     return (
-        <div
-            className={`flex gap-1 items-center justify-center border-2 rounded-2xl px-3 py-1.5 font-semibold`}
-            style={{ borderColor: data.color }}
-        >
-            <Image alt={`${data.title} icon`} src={data.icon} width={25} />
-            {data.title}
-        </div>
+        <span className="skill-tag">
+            {data ? <Image alt="" src={data.icon} width={18} height={18} /> : null}
+            {data?.title ?? skillLabelData[type] ?? type}
+        </span>
     );
 }

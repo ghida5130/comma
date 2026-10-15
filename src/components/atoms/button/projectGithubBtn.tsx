@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import projectGithubIcon from "@/public/icons/modal/github.svg";
+import styles from "@/styles/projects.module.css";
 
 interface ProjectGithubBtnProps {
     href: string | null;
@@ -11,9 +12,15 @@ interface ProjectGithubBtnProps {
 export default function ProjectGithubBtn({ href, title, alias }: ProjectGithubBtnProps) {
     if (href === null) return null;
     return (
-        <Link target="_blank" rel="noopener noreferrer" href={href} className="flex gap-2 text-[#71afff]">
-            <Image src={projectGithubIcon} alt={title + "github button"} width={15} />
-            <span className="truncate">Github {alias ?? null}</span>
+        <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={href}
+            aria-label={`${title} Github ${alias ?? ""} (새 탭)`}
+            className={styles.link}
+        >
+            <Image src={projectGithubIcon} alt="" aria-hidden="true" width={16} height={16} />
+            <span>Github {alias ?? null}</span>
         </Link>
     );
 }

@@ -5,19 +5,23 @@ interface ExtendBtnType {
     name: string;
     state: boolean;
     setState: React.Dispatch<React.SetStateAction<boolean>>;
+    controls?: string;
 }
 
-export default function ExtendBtn({ name, state, setState }: ExtendBtnType) {
+export default function ExtendBtn({ name, state, setState, controls }: ExtendBtnType) {
     return (
         <button
-            className="py-2 px-5 border-[#566eaf] bg-secondary hover:bg-[#566eaf] duration-200 rounded-2xl w-full text-lg font-medium my-3 flex justify-between items-center"
+            type="button"
+            className="expand-button"
+            aria-expanded={state}
+            aria-controls={controls}
             onClick={() => setState((prev) => !prev)}
         >
-            <p>
+            <span>
                 {name}
-                {state ? " 접기" : " 펼치기"}
-            </p>
-            <Image src={extendIcon} alt={name + "extend button"} width={15} />
+                <span className="expand-label">{state ? "접기" : "펼치기"}</span>
+            </span>
+            <Image src={extendIcon} alt="" width={14} className={state ? "rotate-180" : ""} />
         </button>
     );
 }

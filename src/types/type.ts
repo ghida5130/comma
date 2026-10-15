@@ -19,6 +19,7 @@ export interface DetailDataType {
         title: string;
         content: string;
     }[];
+    materialsPending?: string[];
 }
 
 export type MySkillDataType = {
@@ -35,6 +36,7 @@ export interface ProjectDataType {
     skills: string[];
     introduce: string[];
     serverGithub?: string;
+    materialsPending?: string[];
 }
 
 export interface SkillIconDataType {

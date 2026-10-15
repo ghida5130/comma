@@ -2,20 +2,24 @@ import { MySkillDataType } from "@/types/type";
 
 const mySkillData: MySkillDataType = [
     {
-        title: "Language",
-        skills: ["js", "ts", "python", "c"],
+        title: "언어",
+        skills: ["ts", "js", "java", "python"],
     },
     {
-        title: "Front-End",
-        skills: ["react", "next", "redux", "recoil", "tanstack", "three"],
+        title: "프론트엔드",
+        skills: ["react", "next", "vue", "tanstack", "redux", "zustand", "pinia"],
     },
     {
-        title: "Styles",
-        skills: ["scss", "tailwind", "styledComponents", "framer"],
+        title: "스타일·시각화",
+        skills: ["tailwind", "scss", "styledComponents", "three"],
     },
     {
-        title: "Back-End",
-        skills: ["express", "firebase", "mongodb", "vercel", "aws"],
+        title: "개발·협업",
+        skills: ["msw", "jira", "git"],
+    },
+    {
+        title: "데이터·서버",
+        skills: ["firebase", "express", "spark", "hdfs"],
     },
 ];
 

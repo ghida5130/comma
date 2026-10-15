@@ -1,0 +1,26 @@
+const skillLabelData: Record<string, string> = {
+    java: "Java",
+    vue: "Vue.js",
+    pinia: "Pinia",
+    zustand: "Zustand",
+    msw: "MSW",
+    sse: "SSE",
+    webPush: "Web Push",
+    pwa: "PWA",
+    livekit: "LiveKit",
+    stomp: "WebSocket · STOMP",
+    gas: "Google Apps Script",
+    sheets: "Google Sheets",
+    gemini: "Gemini API",
+    pyarrow: "PyArrow",
+    spark: "Spark",
+    hdfs: "HDFS",
+    tailscale: "Tailscale",
+    recharts: "Recharts",
+    jira: "Jira",
+    git: "Git",
+    googleMaps: "Google Maps API",
+    kakaoMaps: "카카오맵 SDK",
+};
+
+export default skillLabelData;

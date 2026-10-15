@@ -3,15 +3,14 @@ import { DetailDataType } from "@/types/type";
 export const milliUlsanDetail: DetailDataType = {
     title: "MilliUlsan",
     develop: "(1인 개발, 반응형)",
-    description: "울산광역시 정보 조회 홈페이지",
+    description: "필요한 지역 정보를 골라 구성하는 울산 생활 정보 대시보드",
     skills: ["react", "ts", "styledComponents", "express", "recoil", "aws", "tanstack"],
     motivation:
-        "울산에 거주하면서 여러가지 정보를 찾을때 파편화된 정보가 한곳에 모여있으면 좋겠다는 생각을 한적이 많습니다. 일기예보나 미세먼지, 영화관, 병원, 축제 정보 등등 여러가지 정보를 한곳에 모으고 달력이나 시계같은 기본적인 기능도 함께 제공해서 한번의 접속으로 많은 정보를 알 수 있도록 제작했습니다.",
+        "날씨·미세먼지·병원·축제 등 흩어진 울산 생활 정보를 한곳에서 확인하고, 사용자가 필요한 모듈만 골라 구성할 수 있는 대시보드입니다. 모듈이 늘어날 때의 렌더링 부하와 반복적인 UI 구현을 줄이는 구조에 집중했습니다.",
     overview: [
-        "울산광역시의 다양한 정보 조회",
-        "CSS Grid 반응형 및 조립식 UI",
-        "사용자 지역 및 검색어에 따른 병원시설 정보 제공",
-        "실시간 날씨, 대기, 지역축제 등 정보 제공",
+        "날씨·대기·병원·지역축제 정보 조회",
+        "원하는 모듈을 골라 구성하는 반응형 대시보드",
+        "사용자 지역·검색어에 따른 병원 시설 탐색",
     ],
     // learned: [
     //     {
@@ -52,10 +51,11 @@ export const milliUlsanDetail: DetailDataType = {
     // ],
     learned: [
         {
-            title: "컴포넌트 재사용성 향상과 반응형 웹, 조립식 UI",
+            title: "공통 UI를 재사용하는 모듈 구조로 기능 확장",
             content: [
-                "CSS Grid와 모듈식 컴포넌트를 통해 **조립식으로 사용하는 UX 및 DX** 제공",
-                "CSS Grid와 Styled-Components를 활용해 **동적 컴포넌트로 반응형 웹** 구현",
+                "Atomic Design을 참고해 공통 UI와 기능 컴포넌트를 분리하고, 이를 조합하는 **모듈식 구조**를 설계했습니다.",
+                "새 모듈을 추가할 때 **카드·그리드·스타일을 재사용**할 수 있게 해 반복 구현을 줄이고 기능 개발에 집중하도록 구성했습니다.",
+                "사용자가 필요한 모듈만 배치할 수 있도록 CSS Grid 기반 반응형 화면을 제공했습니다.",
             ],
             link: [
                 {
@@ -65,27 +65,13 @@ export const milliUlsanDetail: DetailDataType = {
             ],
         },
         {
-            title: "병원 정보 페이지 대규모 데이터 처리",
+            title: "렌더링 최적화 이후의 시계 초기화 누락 해결",
             content: [
-                "메모이제이션을 통한 **불필요한 필터링 연산 방지**",
-                "debounce를 활용해 사용자 입력 종료 후 필터링 연산 처리 **(입력 시 과도한 연산 방지)**",
-                "controlled input과 필터링 연산의 state를 분리하여 **사용자 입력 지연 제거**",
-                "대용량 데이터 필터링 연산을 **웹워커**로 분리",
-                "react-intersection-observer의 useInView를 적용해 보이지 않는 영역의 렌더링을 제한하여 **프레임 드랍 제거**",
+                "IntersectionObserver 기반 useInView로 **화면 밖 모듈의 내부 콘텐츠 생성을 제한**했습니다. 이후 시계 모듈에 처음 진입하거나 재진입할 때 바늘이 12시 방향에서 시작하는 문제를 발견했습니다.",
+                "초기화 실행 시점에는 내부 DOM이 없고, 화면 진입 후 DOM이 생성돼도 초기화가 다시 실행되지 않는 것이 원인이었습니다.",
+                "시계 DOM과 초기화 로직을 하위 컴포넌트로 분리하고 **마운트 시 useLayoutEffect와 ref로 현재 시각을 적용**했습니다. 기존 렌더링 최적화를 유지하면서 초기화 누락을 해결했습니다.",
             ],
             link: [
-                {
-                    title: "React의 Memoization",
-                    url: "https://cstelladev.tistory.com/63",
-                },
-                {
-                    title: "debounce를 통한 최적화",
-                    url: "https://cstelladev.tistory.com/65",
-                },
-                {
-                    title: "웹워커와 controlled input",
-                    url: "https://cstelladev.tistory.com/78",
-                },
                 {
                     title: "useInView로 레이아웃 연산 감소 시키기",
                     url: "https://cstelladev.tistory.com/79",
@@ -93,11 +79,11 @@ export const milliUlsanDetail: DetailDataType = {
             ],
         },
         {
-            title: "BFF 서버 및 공공데이터 API 활용",
+            title: "3시간 주기 BFF 캐싱으로 외부 API 호출 분리",
             content: [
-                "BFF 서버를 이용해 대기오염 데이터를 **프론트엔드에서 사용하기 편리**하도록 가공하여 제공",
-                "주기적으로 업데이트되는 날씨예보 데이터 **cron**을 이용한 주기적 **캐싱 및 가공**",
-                "Express.js, AWS EC2, Route53 활용",
+                "갱신 주기가 정해진 날씨예보를 사용자 요청마다 외부 API에서 가져오는 비효율을 줄이기 위해 **BFF 서버에 파일 캐싱**을 적용했습니다.",
+                "**cron으로 3시간마다 수집·가공한 데이터를 JSON으로 저장**하고 프론트엔드 요청에는 저장된 결과를 제공했습니다.",
+                "외부 API 호출을 사용자 요청 수와 분리하고, 외부 응답을 기다리지 않고 데이터를 제공하는 구조를 마련했습니다.",
             ],
             link: [
                 { title: "대기오염 데이터 가공하기", url: "https://cstelladev.tistory.com/57" },
@@ -105,15 +91,6 @@ export const milliUlsanDetail: DetailDataType = {
                     title: "날씨예보 데이터 외부 API 업데이트 주기에 맞춰 캐싱하기",
                     url: "https://cstelladev.tistory.com/60",
                 },
-            ],
-        },
-        {
-            title: "기타 프론트엔드 개발 학습",
-            content: [
-                "**Atomic Design**을 참고하여 구조화된 컴포넌트 설계 및 재사용성 증가",
-                "**Recoil**을 활용해 사용자 입력 지역 정보 및 테마 관리",
-                "**Framer-motion**을 활용해 UI 애니메이션 간편하게 구현",
-                "공공데이터포털, OpenWeatherMap API 사용",
             ],
         },
     ],
